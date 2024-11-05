@@ -133,4 +133,5 @@ table, th, td {
 </style>
 
 // Used chatGPT to assist in ensuring that the conversion was correct and that there were no errors, QUERY: "Will you check this code
-// and make sure that the conversion from the original code with options API to composition API works correctly."
+// and make sure that the conversion from the original code with options API to composition API works correctly." It suggested
+// I should move some lines around to make sure I don't run into any errors which I did.
