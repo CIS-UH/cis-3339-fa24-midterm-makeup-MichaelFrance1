@@ -56,21 +56,23 @@ import { Bar } from 'vue-chartjs';
 // Registers chart.js components for rendering charts
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
+// Defines chart configuration and data as reactive objects
+const chart_options = {
+    responsive: true,
+    maintainAspectRatio: true,
+    scales: {
+        x: { title: { display: true, text: "Time" } },
+        y: { title: { display: true, text: "Temperature (F)" } }
+    }
+};
+      
 export default {
   components: { Bar },
   setup() {
     // Convert data properties to reactive variables 
     // This replaces the data() function in the Options API with Composition API form
       const form_input = reactive({ start_dt: "", end_dt: "", location: "" }); // Holds form input data
-      // Defines chart configuration and data as reactive objects
-      const chart_options = {
-          responsive: true,
-          maintainAspectRatio: true,
-          scales: {
-              x: { title: { display: true, text: "Time" } },
-              y: { title: { display: true, text: "Temperature (F)" } }
-          }
-      };
+      
       const chart_data = reactive({
           labels: [],
           datasets: [{ label: "Average Temperature", backgroundColor: "#f87979", data: [] }]
